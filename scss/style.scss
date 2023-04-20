@@ -59,18 +59,22 @@ header {
             gap: 1.5rem;
 
             h1 {
-                padding: 0 2rem;
+                padding: 0 1rem;
                 margin: 0;
+                font-size: 2.2rem;        
+                @include font-weight(black);
             }
 
             p {
                 margin: auto;
+                line-height: 1.5;
             }
 
             &--btn {
                 @include btn-features;
                 @include btn-features-2;
                 background-color: #e83d8e;
+                font-size: 1.7rem;
                 
 
                 &:hover {
@@ -108,6 +112,10 @@ main {
             img {
                 width: 100%;
                 max-width: 10%;
+            }
+
+            h2 {
+                width: 70%;
             }
 
             p {
@@ -150,6 +158,7 @@ main {
             gap: 3rem;
             background-image: linear-gradient(180deg,#1e1d28,#0b0b0e 50.03%);
             height: 50vh;
+            border-top: 1px solid #e83d8e;
     
             
             p {
@@ -181,6 +190,7 @@ main {
         &__dstv {
             @extend .show__max__mtn;
             background-image: linear-gradient(180deg,#1e1d28,#0b0b0e 146.98%);
+            border-top: 1px solid #00b7dd;
 
             p {
                 width: 93%;
@@ -305,6 +315,115 @@ main {
             }
         }
     }
+
+    .accordion {
+        @include flexCenter;
+        flex-direction: column;
+        padding: 4rem 0;
+        
+        .accordion-title {
+            font-size: 2rem;
+        }
+
+        .accordion-container {
+            width: 90%;
+            // padding: 3rem .7rem;
+            // margin: auto;
+
+            :hover {
+                background-color: rgb(223, 223, 224);
+            }
+        }
+
+        .accordion-content {
+            background-color: aliceblue;
+            margin: 1rem auto;
+            gap: 2rem;
+            width: 90%;
+            padding: 0 2.5rem;
+            overflow: hidden;
+            transition: .5s linear all;
+            
+            // border-bottom: 2px solid red;
+            // border-top: 2px solid red;
+            .accordion-content.open {
+                padding-bottom: 10rem;
+            }
+
+
+            header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                min-height: 60px;
+                transition: all .2s linear;
+
+                .accordion-content.open header {
+                    min-height: 40px;
+                }
+                
+                
+                .title { 
+                    font-size: 1.6rem;
+                    @include font-weight(medium);
+                }
+
+                i {
+                    font-size: 1.2rem;
+                }
+            }
+
+            p {
+                color: gray;
+                line-height: 1.5;
+                width: 100%;
+                max-height: 0;
+                
+                transition: .3s all ease-in;
+                margin: 0;
+                
+
+                strong {
+                    font-size: 1.8rem;
+                }
+            }
+        }
+    }
+}
+
+footer {
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 45vh;
+    
+
+    .nav-list {
+        @include flex;
+        gap: 2rem;
+        flex-direction: column;
+        width: 100%;
+        
+
+        a {
+            font-size: 1.6rem;
+            @include font-weight(medium);
+
+            &.active {
+                border-bottom: 1px solid #fff;
+            }
+        }
+    }
+
+    span {
+        width: fit-content;
+        margin-left: 4rem;
+        font-size: 1.5rem;
+        @include font-weight(medium);
+        // margin-left: 4rem;
+        color: rgba(224, 255, 255, 0.598) !important;
+    }
 }
 
 
@@ -317,6 +436,7 @@ main {
             flex-direction: row-reverse;
             width: 100%;
             text-align: left;
+            
 
             &__content {
                 flex-direction: inherit;
@@ -324,11 +444,13 @@ main {
                 align-items: start !important;
                 width: 100%;
                 max-width: 420px;
+                margin: 0 6rem;
                 
 
                 h1 {
-                    font-size: 3rem;
-                    @include font-weight(black);
+                    font-size: 3rem !important;
+                    @include font-weight(bold);
+                    line-height: 1.6;
                     padding: 0 !important;
                     
                 }
@@ -359,12 +481,14 @@ main {
 
     .redeem {
         order: inherit !important;
-        justify-content: space-between !important;
+        justify-content: space-between !important; 
         height: inherit !important;
 
         .redeem__special {
             flex-direction: row !important;
-            width: 100%;
+            width: 90% !important;
+            margin: auto;
+            justify-content: space-between !important;
 
             &__content {
                 text-align: left !important;
@@ -377,8 +501,25 @@ main {
         display: flex;
 
         &__mtn {
+            gap: 8rem !important;
             width: 100%;
+            height: 60vh !important;
+
+            h2 {
+                font-size: 2.5rem;
+            }
+
+            p {
+                width: 100% !important;
+            }
         }
+
+        .show__max__dstv p {
+            width: 100%;
+            max-width: 70%;
+        }
+
+    
     }
 
     .specials {
@@ -386,6 +527,8 @@ main {
 
         .more__specials {
             flex-direction: row !important;
+            margin: auto;
+            width: 85%;
 
             &__content {
                 text-align: left !important;
@@ -398,12 +541,50 @@ main {
     .flexibility {
 
         .flexibility__device {
-            flex-direction: row-reverse !important;
+            flex-direction: row !important;
+            justify-content: space-around !important;
+            width: 100%;
 
             &__content {
                 text-align: left !important;
                 display: block !important;
+
+            }
+
+            img {
+                width: 50%;
+            }
+
+            &:nth-child(2) {
+                p {
+                    width: 95% !important;
+                }
+            }
+
+            &:nth-child(3) {
+                
+                .row-cols-1 {
+                    margin: 0 4rem;
+                }
             }
         }
     }
+
+
+    footer {
+        height: 30vh;
+        gap: 2rem;
+
+        .nav-list {
+            display: flex;
+            flex-direction: row;
+            gap: 5rem;
+        }
+        
+        span {
+            text-align: center;
+            width: auto;
+        }
+    }
+    
 }

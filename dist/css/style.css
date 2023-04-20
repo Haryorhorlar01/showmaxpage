@@ -135,12 +135,15 @@ header .hero .hero__content {
 }
 
 header .hero .hero__content h1 {
-  padding: 0 2rem;
+  padding: 0 1rem;
   margin: 0;
+  font-size: 2.2rem;
+  font-weight: 900;
 }
 
 header .hero .hero__content p {
   margin: auto;
+  line-height: 1.5;
 }
 
 header .hero .hero__content--btn {
@@ -156,6 +159,7 @@ header .hero .hero__content--btn {
   transition: .3s all ease-in-out;
   border-radius: 50px;
   background-color: #e83d8e;
+  font-size: 1.7rem;
 }
 
 header .hero .hero__content--btn:hover {
@@ -192,6 +196,10 @@ main .get__showmax__sec {
 main .get__showmax__sec img {
   width: 100%;
   max-width: 10%;
+}
+
+main .get__showmax__sec h2 {
+  width: 70%;
 }
 
 main .get__showmax__sec p strong {
@@ -234,6 +242,7 @@ main .show__max__mtn, main .show__max__dstv {
   gap: 3rem;
   background-image: linear-gradient(180deg, #1e1d28, #0b0b0e 50.03%);
   height: 50vh;
+  border-top: 1px solid #e83d8e;
 }
 
 main .show__max__mtn p, main .show__max__dstv p {
@@ -270,6 +279,7 @@ main .show__max__mtn button img, main .show__max__dstv button img {
 
 main .show__max__dstv {
   background-image: linear-gradient(180deg, #1e1d28, #0b0b0e 146.98%);
+  border-top: 1px solid #00b7dd;
 }
 
 main .show__max__dstv p {
@@ -422,6 +432,107 @@ main .redeem .redeem__special button {
   border: 1px solid #fff;
 }
 
+main .accordion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 4rem 0;
+}
+
+main .accordion .accordion-title {
+  font-size: 2rem;
+}
+
+main .accordion .accordion-container {
+  width: 90%;
+}
+
+main .accordion .accordion-container :hover {
+  background-color: #dfdfe0;
+}
+
+main .accordion .accordion-content {
+  background-color: aliceblue;
+  margin: 1rem auto;
+  gap: 2rem;
+  width: 90%;
+  padding: 0 2.5rem;
+  overflow: hidden;
+  transition: .5s linear all;
+}
+
+main .accordion .accordion-content .accordion-content.open {
+  padding-bottom: 10rem;
+}
+
+main .accordion .accordion-content header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 60px;
+  transition: all .2s linear;
+}
+
+main .accordion .accordion-content header .accordion-content.open header {
+  min-height: 40px;
+}
+
+main .accordion .accordion-content header .title {
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+main .accordion .accordion-content header i {
+  font-size: 1.2rem;
+}
+
+main .accordion .accordion-content p {
+  color: gray;
+  line-height: 1.5;
+  width: 100%;
+  max-height: 0;
+  transition: .3s all ease-in;
+  margin: 0;
+}
+
+main .accordion .accordion-content p strong {
+  font-size: 1.8rem;
+}
+
+footer {
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 45vh;
+}
+
+footer .nav-list {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-direction: column;
+  width: 100%;
+}
+
+footer .nav-list a {
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+footer .nav-list a.active {
+  border-bottom: 1px solid #fff;
+}
+
+footer span {
+  width: fit-content;
+  margin-left: 4rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: rgba(224, 255, 255, 0.598) !important;
+}
+
 @media screen and (min-width: 900px) {
   header .hero {
     flex-direction: row-reverse;
@@ -434,10 +545,12 @@ main .redeem .redeem__special button {
     align-items: start !important;
     width: 100%;
     max-width: 420px;
+    margin: 0 6rem;
   }
   header .hero__content h1 {
-    font-size: 3rem;
-    font-weight: 900;
+    font-size: 3rem !important;
+    font-weight: 700;
+    line-height: 1.6;
     padding: 0 !important;
   }
   header .hero__content p {
@@ -461,7 +574,9 @@ main .redeem .redeem__special button {
   }
   .redeem .redeem__special {
     flex-direction: row !important;
-    width: 100%;
+    width: 90% !important;
+    margin: auto;
+    justify-content: space-between !important;
   }
   .redeem .redeem__special__content {
     text-align: left !important;
@@ -471,24 +586,62 @@ main .redeem .redeem__special button {
     display: flex;
   }
   .show__max__mtn, main .show__max__dstv {
+    gap: 8rem !important;
     width: 100%;
+    height: 60vh !important;
+  }
+  .show__max__mtn h2, main .show__max__dstv h2 {
+    font-size: 2.5rem;
+  }
+  .show__max__mtn p, main .show__max__dstv p {
+    width: 100% !important;
+  }
+  .show__max .show__max__dstv p {
+    width: 100%;
+    max-width: 70%;
   }
   .specials {
     height: fit-content !important;
   }
   .specials .more__specials {
     flex-direction: row !important;
+    margin: auto;
+    width: 85%;
   }
   .specials .more__specials__content {
     text-align: left !important;
     display: block !important;
   }
   .flexibility .flexibility__device {
-    flex-direction: row-reverse !important;
+    flex-direction: row !important;
+    justify-content: space-around !important;
+    width: 100%;
   }
   .flexibility .flexibility__device__content {
     text-align: left !important;
     display: block !important;
+  }
+  .flexibility .flexibility__device img {
+    width: 50%;
+  }
+  .flexibility .flexibility__device:nth-child(2) p {
+    width: 95% !important;
+  }
+  .flexibility .flexibility__device:nth-child(3) .row-cols-1 {
+    margin: 0 4rem;
+  }
+  footer {
+    height: 30vh;
+    gap: 2rem;
+  }
+  footer .nav-list {
+    display: flex;
+    flex-direction: row;
+    gap: 5rem;
+  }
+  footer span {
+    text-align: center;
+    width: auto;
   }
 }
 /*# sourceMappingURL=style.css.map */
