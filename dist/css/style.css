@@ -462,8 +462,8 @@ main .accordion .accordion-content {
   transition: .5s linear all;
 }
 
-main .accordion .accordion-content .accordion-content.open {
-  padding-bottom: 10rem;
+main .accordion .accordion-content.open {
+  padding-bottom: 2rem;
 }
 
 main .accordion .accordion-content header {
@@ -474,10 +474,6 @@ main .accordion .accordion-content header {
   transition: all .2s linear;
 }
 
-main .accordion .accordion-content header .accordion-content.open header {
-  min-height: 40px;
-}
-
 main .accordion .accordion-content header .title {
   font-size: 1.6rem;
   font-weight: 500;
@@ -485,6 +481,16 @@ main .accordion .accordion-content header .title {
 
 main .accordion .accordion-content header i {
   font-size: 1.2rem;
+}
+
+main .accordion .accordion-content ul {
+  font-size: 1.6rem;
+  line-height: 1.5;
+  overflow: hidden;
+}
+
+main .accordion .accordion-content ul li {
+  list-style-type: circle;
 }
 
 main .accordion .accordion-content p {
@@ -498,6 +504,10 @@ main .accordion .accordion-content p {
 
 main .accordion .accordion-content p strong {
   font-size: 1.8rem;
+}
+
+main .accordion .accordion-content.open p {
+  max-height: fit-content;
 }
 
 footer {
