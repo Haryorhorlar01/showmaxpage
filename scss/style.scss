@@ -3,21 +3,39 @@
 @import './utils/fonts';
 @import './utils/resuable';
 
+body {
+    padding: 70px 0;
+}
 
 header {
 
     nav {
-        background-color: rgb(36, 34, 34);
-        height: 70px;
+        background-color: #000;
+        min-height: 70px;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        transition: background-color .4s ease-in-out;
+        
+        &.scrolled {
+            background-color: #000;
+            opacity: .9;
+            z-index: 1;
+        }
 
         .container {
             @include flexSpace(center);
+            justify-content: space-between;
             height: 50px;
+            position: absolute;
+            top: 10%;
+            right: 1%;
+            padding: 0 3rem;
             
 
             .logo {
                 width: 100%;
-                max-width: 200px;
+                max-width: 180px;
             }
         }
 
@@ -26,6 +44,8 @@ header {
             height: 40px;
             @include flexCenter;
             gap: 1rem;
+            position: absolute;
+            right: 4%;
 
             &-btn1 {
                 @include flexCenter;
@@ -33,12 +53,17 @@ header {
                 background: transparent;
                 @include btn-features;
                 border: 1px solid #fff;
-                display: none;
+                padding: 1rem 1.5rem;
+                background-color: #fff;
+                color: #000;
+                display: none
             }
 
             &-btn2 {
                 @extend .cta__btn-btn1;
                 display: block;
+                background-color: transparent;
+                color: #fff;
             }
         }
 
@@ -96,6 +121,7 @@ main {
     display: flex;
     flex-direction: column;
     
+    
 
     .get__showmax {
         text-align: center;
@@ -103,6 +129,7 @@ main {
         color: #fff;
         @include flexCenter;
         flex-direction: column;
+        z-index: -1;
 
         &__sec {
             @include flexCenter;
@@ -317,91 +344,105 @@ main {
     }
 
     .accordion {
-        @include flexCenter;
-        flex-direction: column;
-        padding: 4rem 0;
+        max-width: 1200px;
+        width: 100%;
+        margin: 2rem auto;
+        margin-top: 4.5rem;
+        margin-bottom: 8rem;
         
-        .accordion-title {
-            font-size: 2rem;
+
+        h2 {
+            text-align: center;
+            font-size: 3rem;
         }
 
-        .accordion-container {
-            width: 90%;
-            // padding: 3rem .7rem;
-            // margin: auto;
-
-            :hover {
-                background-color: rgb(223, 223, 224);
-            }
-        }
-
-        .accordion-content {
-            background-color: aliceblue;
-            margin: 1rem auto;
-            gap: 2rem;
-            width: 90%;
-            padding: 0 2.5rem;
-            overflow: hidden;
-            transition: .5s linear all;
-            
-            // border-bottom: 2px solid red;
-            // border-top: 2px solid red;
-            &.open {
-                padding-bottom: 2rem;
+        .accordion__item {
+            background-color: #fff;
+            color: #18171f;
+            border-bottom: 1px solid rgb(207, 212, 216);
+            padding: 0 3rem;
+            &:hover {
+                background-color: aliceblue;
             }
 
+            &:nth-last-of-type(9) {
+                border-top: 1px solid rgb(207, 212, 216);
+                margin-top: 4.5rem;
+            }
 
-            header {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                min-height: 60px;
-                transition: all .2s linear;
+            &__header {
+                min-height: 6.5rem;
+                line-height: 1.25rem;
+                cursor: pointer;
+                padding: .5rem 3rem .5rem 1rem;
+                @include flexSpace(space-between);
+                position: relative;
 
-            
-
+                &:hover {
+                    background-color: aliceblue;
+                }
                 
-                .title { 
-                    font-size: 1.6rem;
+                h3 {
                     @include font-weight(medium);
+                    font-size: 1.6rem;
                 }
 
-                i {
-                    font-size: 1.2rem;
+                &::after {
+                    content: "\002b";
+                    font-size: 2rem;
+                    position: absolute;
+                    right: 1rem;
+                }
+
+                &.active::after {
+                    content: "\2212";
                 }
             }
 
-            ul {
-                font-size: 1.6rem;
+            &__body {
+                padding: .4rem;
                 line-height: 1.5;
+                display: none;
+                max-height: 0;
                 overflow: hidden;
 
-                li {
-                    list-style-type: circle;
+                &__content {
+                    padding-bottom: 1.5rem;
+                    .nav-item {
+                        font-size: 1.6rem;
+                        color: gray;
+                        .nav-list {
+                            list-style-type: disc;
+                        }
+                    }
+                    
+                    .description {
+                        margin: 1rem 0;
+                        padding: 0 .6rem;
+                        color: gray;
+                        width: 100%;
+                    }
+
+                    .color {
+                        color: #e83d8e;
+                        font-size: 1.6rem;
+
+                        &:hover {
+                            color: gray;
+                            text-decoration: underline;
+                        }
+                    }
                 }
-
             }
-
-            p {
-                color: gray;
-                line-height: 1.5;
-                width: 100%;
-                max-height: 0;
-                
-                transition: .3s all ease-in;
-                margin: 0;
-                
-
-                strong {
-                    font-size: 1.8rem;
-                }
-            }
-
-            &.open p {
-                max-height: fit-content;
-            }
+            
         }
+
+        .accordion__item__header.active + .accordion__item__body {
+            max-height: fit-content;
+        }
+
     }
+
 }
 
 
@@ -412,6 +453,8 @@ footer {
     flex-direction: column;
     justify-content: center;
     height: 45vh;
+    position: absolute;
+    width: 100%;
     
 
     .nav-list {
@@ -446,6 +489,17 @@ footer {
 
 @media screen and (min-width: 900px) {
     header {
+
+        nav {
+
+            .container {
+                justify-content: center;
+            }
+        }
+
+        .cta__btn-btn1 {
+            display: block !important;
+        }
 
         .hero {
             flex-direction: row-reverse;

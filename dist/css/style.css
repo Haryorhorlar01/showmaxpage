@@ -70,21 +70,40 @@ p {
   font-weight: 500;
 }
 
+body {
+  padding: 70px 0;
+}
+
 header nav {
-  background-color: #242222;
-  height: 70px;
+  background-color: #000;
+  min-height: 70px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  transition: background-color .4s ease-in-out;
+}
+
+header nav.scrolled {
+  background-color: #000;
+  opacity: .9;
+  z-index: 1;
 }
 
 header nav .container {
   display: flex;
   align-items: center;
   justify-content: center;
+  justify-content: space-between;
   height: 50px;
+  position: absolute;
+  top: 10%;
+  right: 1%;
+  padding: 0 3rem;
 }
 
 header nav .container .logo {
   width: 100%;
-  max-width: 200px;
+  max-width: 180px;
 }
 
 header nav .cta__btn {
@@ -93,6 +112,8 @@ header nav .cta__btn {
   justify-content: center;
   align-items: center;
   gap: 1rem;
+  position: absolute;
+  right: 4%;
 }
 
 header nav .cta__btn-btn1, header nav .cta__btn-btn2 {
@@ -107,11 +128,16 @@ header nav .cta__btn-btn1, header nav .cta__btn-btn2 {
   color: #fff;
   font-weight: 700;
   border: 1px solid #fff;
+  padding: 1rem 1.5rem;
+  background-color: #fff;
+  color: #000;
   display: none;
 }
 
 header nav .cta__btn-btn2 {
   display: block;
+  background-color: transparent;
+  color: #fff;
 }
 
 header .hero {
@@ -183,6 +209,7 @@ main .get__showmax {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  z-index: -1;
 }
 
 main .get__showmax__sec {
@@ -433,80 +460,104 @@ main .redeem .redeem__special button {
 }
 
 main .accordion {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding: 4rem 0;
-}
-
-main .accordion .accordion-title {
-  font-size: 2rem;
-}
-
-main .accordion .accordion-container {
-  width: 90%;
-}
-
-main .accordion .accordion-container :hover {
-  background-color: #dfdfe0;
-}
-
-main .accordion .accordion-content {
-  background-color: aliceblue;
-  margin: 1rem auto;
-  gap: 2rem;
-  width: 90%;
-  padding: 0 2.5rem;
-  overflow: hidden;
-  transition: .5s linear all;
-}
-
-main .accordion .accordion-content.open {
-  padding-bottom: 2rem;
-}
-
-main .accordion .accordion-content header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  min-height: 60px;
-  transition: all .2s linear;
-}
-
-main .accordion .accordion-content header .title {
-  font-size: 1.6rem;
-  font-weight: 500;
-}
-
-main .accordion .accordion-content header i {
-  font-size: 1.2rem;
-}
-
-main .accordion .accordion-content ul {
-  font-size: 1.6rem;
-  line-height: 1.5;
-  overflow: hidden;
-}
-
-main .accordion .accordion-content ul li {
-  list-style-type: circle;
-}
-
-main .accordion .accordion-content p {
-  color: gray;
-  line-height: 1.5;
+  max-width: 1200px;
   width: 100%;
+  margin: 2rem auto;
+  margin-top: 4.5rem;
+  margin-bottom: 8rem;
+}
+
+main .accordion h2 {
+  text-align: center;
+  font-size: 3rem;
+}
+
+main .accordion .accordion__item {
+  background-color: #fff;
+  color: #18171f;
+  border-bottom: 1px solid #cfd4d8;
+  padding: 0 3rem;
+}
+
+main .accordion .accordion__item:hover {
+  background-color: aliceblue;
+}
+
+main .accordion .accordion__item:nth-last-of-type(9) {
+  border-top: 1px solid #cfd4d8;
+  margin-top: 4.5rem;
+}
+
+main .accordion .accordion__item__header {
+  min-height: 6.5rem;
+  line-height: 1.25rem;
+  cursor: pointer;
+  padding: .5rem 3rem .5rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+main .accordion .accordion__item__header:hover {
+  background-color: aliceblue;
+}
+
+main .accordion .accordion__item__header h3 {
+  font-weight: 500;
+  font-size: 1.6rem;
+}
+
+main .accordion .accordion__item__header::after {
+  content: "\002b";
+  font-size: 2rem;
+  position: absolute;
+  right: 1rem;
+}
+
+main .accordion .accordion__item__header.active::after {
+  content: "\2212";
+}
+
+main .accordion .accordion__item__body {
+  padding: .4rem;
+  line-height: 1.5;
+  display: none;
   max-height: 0;
-  transition: .3s all ease-in;
-  margin: 0;
+  overflow: hidden;
 }
 
-main .accordion .accordion-content p strong {
-  font-size: 1.8rem;
+main .accordion .accordion__item__body__content {
+  padding-bottom: 1.5rem;
 }
 
-main .accordion .accordion-content.open p {
+main .accordion .accordion__item__body__content .nav-item {
+  font-size: 1.6rem;
+  color: gray;
+}
+
+main .accordion .accordion__item__body__content .nav-item .nav-list {
+  list-style-type: disc;
+}
+
+main .accordion .accordion__item__body__content .description {
+  margin: 1rem 0;
+  padding: 0 .6rem;
+  color: gray;
+  width: 100%;
+}
+
+main .accordion .accordion__item__body__content .color {
+  color: #e83d8e;
+  font-size: 1.6rem;
+}
+
+main .accordion .accordion__item__body__content .color:hover {
+  color: gray;
+  text-decoration: underline;
+}
+
+main .accordion .accordion__item__header.active + .accordion__item__body {
   max-height: fit-content;
 }
 
@@ -516,6 +567,8 @@ footer {
   flex-direction: column;
   justify-content: center;
   height: 45vh;
+  position: absolute;
+  width: 100%;
 }
 
 footer .nav-list {
@@ -544,6 +597,12 @@ footer span {
 }
 
 @media screen and (min-width: 900px) {
+  header nav .container {
+    justify-content: center;
+  }
+  header .cta__btn-btn1, header nav .cta__btn-btn2 {
+    display: block !important;
+  }
   header .hero {
     flex-direction: row-reverse;
     width: 100%;

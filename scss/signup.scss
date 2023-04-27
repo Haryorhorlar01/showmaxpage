@@ -1,0 +1,32 @@
+header {
+
+    nav {
+        height: 70px;
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50px;
+            
+
+            .logo {
+                width: 100%;
+                max-width: 200px;
+            }
+        }
+
+    }
+}
+
+body {
+    background: rgba(0,0,0,.5) url('https://showmax.akamaized.net/i/cd528873-72dc-402a-886f-992136840b81/1360x/q=30');
+    background-blend-mode: darken;
+}
+
+main {
+    background-color: #fff;
+    max-width: 800px;
+    width: 100%;
+    margin: auto;
+}
