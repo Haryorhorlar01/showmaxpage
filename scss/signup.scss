@@ -1,12 +1,15 @@
+@import './globals/boilerplate';
+@import './globals/typography';
+@import './utils/fonts';
+@import './utils/resuable';
+
 header {
 
     nav {
         height: 70px;
 
         .container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            @include flexSpace(center);
             height: 50px;
             
 
@@ -20,13 +23,133 @@ header {
 }
 
 body {
-    background: rgba(0,0,0,.5) url('https://showmax.akamaized.net/i/cd528873-72dc-402a-886f-992136840b81/1360x/q=30');
+    background: rgba(0,0,0,.8) url('https://showmax.akamaized.net/i/cd528873-72dc-402a-886f-992136840b81/1360x/q=30');
     background-blend-mode: darken;
 }
 
 main {
-    background-color: #fff;
-    max-width: 800px;
+    max-width: 700px;
     width: 100%;
     margin: auto;
+
+    .wrapper {
+        background-color: #fff;
+        border-radius: 5px;
+        display: flex;
+        
+
+        .wrapper__header {
+            width: 50%;
+            padding: 1.5rem 2rem;
+
+            &__h1 {
+                line-height: 1.5;
+            }
+        }
+
+        .wrapper__content {
+            font-size: 1.6rem;
+
+            &__checklist {
+                
+                li {
+                    list-style-type: disc;
+                }
+                
+            }
+        }
+
+
+        .tab-form {
+            width: 50%;
+            background-color: rgb(220, 224, 227);
+            overflow: hidden;
+
+
+            .tab-header {
+                @include flexSpace(space-between);
+                background-color: #fff;
+                // margin: 0 2rem;
+                width: 100%;
+
+                // & > div:nth-child(2) {
+                //     margin-right: 4rem;
+                // }
+                         
+
+                & > div {
+                    padding: 0 2rem;
+                    width: 367px;
+                    font-size: 1.6rem;
+                    @include font-weight(bold);
+                    text-align: center;
+                    min-height: 50px;
+                    @include flexSpace(space-between);
+                }
+
+                & > div.active {
+                    background-color: rgb(220, 224, 227);
+                    width: 390px;
+                }
+            }
+
+            .tab-body {
+                padding: 20px;
+
+                & > .signin {
+                    display: none;
+                }
+
+                .signup {
+
+                    .form-input {
+                        h2 {
+                            font-size: 1.4rem;
+                        }
+
+                        label {
+                            @include font-weight(bold);
+                            font-size: 1.4rem;
+                        }
+
+                        [type="tel"] {
+                            padding-left: 5rem;
+                        }
+
+                        span {
+                            font-size: 1.4rem;
+                        }
+
+                        input {
+                            width: 310px;
+                            max-width: 100%;
+                            padding: 1.6rem;
+                            border: none;
+                            outline: none;
+                        }
+
+                        button {
+                            @include btn-features;
+                            @include btn-features-2;
+                            background-color: #e83d8e;
+                            font-size: 1.7rem;
+                            width: 100%;
+                        }
+                    }
+
+                    small {
+                        font-size: 1.2rem;
+
+                        a {
+                            color: #0069b1;
+                        }
+                    }
+                }
+
+                .signin {
+                    @extend .signup;
+                }
+            }
+        }
+    }
 }

@@ -1,11 +1,83 @@
+html {
+  box-sizing: border-box;
+  font-size: 10px;
+  text-rendering: optimizeLegibility;
+}
+
+*, *::after, *::before {
+  box-sizing: inherit;
+}
+
+.logo {
+  width: 200px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Montserrat, sans-serif;
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+  line-height: 1.1;
+  margin-top: 0;
+}
+
+p {
+  margin-top: 0;
+}
+
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+}
+
+a, a:visited, a:active {
+  text-decoration: none;
+  color: #fff;
+}
+
+li {
+  list-style-type: none;
+}
+
+button {
+  cursor: pointer;
+  outline: 0;
+}
+
+.container {
+  max-width: 100%;
+  width: 125.5rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 1rem 0;
+  line-height: 1.25;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+p {
+  font-size: 1.6rem;
+  width: 80%;
+  font-weight: 500;
+}
+
 header nav {
   height: 70px;
 }
 
 header nav .container {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   height: 50px;
 }
 
@@ -15,14 +87,125 @@ header nav .container .logo {
 }
 
 body {
-  background: rgba(0, 0, 0, 0.5) url("https://showmax.akamaized.net/i/cd528873-72dc-402a-886f-992136840b81/1360x/q=30");
+  background: rgba(0, 0, 0, 0.8) url("https://showmax.akamaized.net/i/cd528873-72dc-402a-886f-992136840b81/1360x/q=30");
   background-blend-mode: darken;
 }
 
 main {
-  background-color: #fff;
-  max-width: 800px;
+  max-width: 700px;
   width: 100%;
   margin: auto;
+}
+
+main .wrapper {
+  background-color: #fff;
+  border-radius: 5px;
+  display: flex;
+}
+
+main .wrapper .wrapper__header {
+  width: 50%;
+  padding: 1.5rem 2rem;
+}
+
+main .wrapper .wrapper__header__h1 {
+  line-height: 1.5;
+}
+
+main .wrapper .wrapper__content {
+  font-size: 1.6rem;
+}
+
+main .wrapper .wrapper__content__checklist li {
+  list-style-type: disc;
+}
+
+main .wrapper .tab-form {
+  width: 50%;
+  background-color: #dce0e3;
+  overflow: hidden;
+}
+
+main .wrapper .tab-form .tab-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  width: 100%;
+}
+
+main .wrapper .tab-form .tab-header > div {
+  padding: 0 2rem;
+  width: 367px;
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-align: center;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+main .wrapper .tab-form .tab-header > div.active {
+  background-color: #dce0e3;
+  width: 390px;
+}
+
+main .wrapper .tab-form .tab-body {
+  padding: 20px;
+}
+
+main .wrapper .tab-form .tab-body > .signin {
+  display: none;
+}
+
+main .wrapper .tab-form .tab-body .signup .form-input h2, main .wrapper .tab-form .tab-body .signin .form-input h2 {
+  font-size: 1.4rem;
+}
+
+main .wrapper .tab-form .tab-body .signup .form-input label, main .wrapper .tab-form .tab-body .signin .form-input label {
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+
+main .wrapper .tab-form .tab-body .signup .form-input [type="tel"], main .wrapper .tab-form .tab-body .signin .form-input [type="tel"] {
+  padding-left: 5rem;
+}
+
+main .wrapper .tab-form .tab-body .signup .form-input span, main .wrapper .tab-form .tab-body .signin .form-input span {
+  font-size: 1.4rem;
+}
+
+main .wrapper .tab-form .tab-body .signup .form-input input, main .wrapper .tab-form .tab-body .signin .form-input input {
+  width: 310px;
+  max-width: 100%;
+  padding: 1.6rem;
+  border: none;
+  outline: none;
+}
+
+main .wrapper .tab-form .tab-body .signup .form-input button, main .wrapper .tab-form .tab-body .signin .form-input button {
+  outline: none;
+  border: none;
+  border-radius: 50px;
+  color: #fff;
+  font-weight: 700;
+  height: 50px;
+  font-size: 1.6rem;
+  color: #fff;
+  padding: 1rem 3rem;
+  transition: .3s all ease-in-out;
+  border-radius: 50px;
+  background-color: #e83d8e;
+  font-size: 1.7rem;
+  width: 100%;
+}
+
+main .wrapper .tab-form .tab-body .signup small, main .wrapper .tab-form .tab-body .signin small {
+  font-size: 1.2rem;
+}
+
+main .wrapper .tab-form .tab-body .signup small a, main .wrapper .tab-form .tab-body .signin small a {
+  color: #0069b1;
 }
 /*# sourceMappingURL=signup.css.map */
