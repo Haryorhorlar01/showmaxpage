@@ -42,11 +42,11 @@ let tabHeaderEl = document.querySelectorAll(".tab-header > div");
 let tabBody = document.querySelector(".tab-body");
 let tabBodyEl = document.querySelectorAll('tab-body > div');
 
+
 for (let i = 0; i < tabHeaderEl.length; i++) {
     tabHeaderEl[i].addEventListener('click', () => {
         tabHeader.querySelector(".active").classList.remove("active");
         tabHeaderEl[i].classList.add("active");
-        
         
     })
 }

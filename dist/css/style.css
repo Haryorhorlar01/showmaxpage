@@ -140,15 +140,22 @@ header nav .cta__btn-btn2 {
   color: #fff;
 }
 
+header .mx-width {
+  max-width: 1300rem;
+  width: 100%;
+  background-color: #000;
+}
+
 header .hero {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   text-align: center;
-  background-color: #000;
   color: #fff;
   padding-bottom: 7rem;
+  max-width: 1300px;
+  width: 100%;
 }
 
 header .hero .hero__content {
@@ -260,6 +267,11 @@ main .show__max {
   color: #fff;
 }
 
+main .show__max__content {
+  max-width: 650px;
+  width: 100%;
+}
+
 main .show__max__mtn, main .show__max__dstv {
   display: flex;
   align-items: center;
@@ -333,6 +345,8 @@ main .specials {
 }
 
 main .specials .more__specials {
+  max-width: 1300px;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -395,6 +409,8 @@ main .flexibility {
 }
 
 main .flexibility .flexibility__device {
+  max-width: 1300px;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -429,6 +445,8 @@ main .redeem {
 }
 
 main .redeem .redeem__special {
+  max-width: 1300px;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -460,7 +478,7 @@ main .redeem .redeem__special button {
 }
 
 main .accordion {
-  max-width: 1200px;
+  max-width: 1300px;
   width: 100%;
   margin: 2rem auto;
   margin-top: 4.5rem;
@@ -548,7 +566,6 @@ main .accordion .accordion__item__body__content .description {
 }
 
 main .accordion .accordion__item__body__content .color {
-  color: #e83d8e;
   font-size: 1.6rem;
 }
 
@@ -577,6 +594,8 @@ footer .nav-list {
   gap: 2rem;
   flex-direction: column;
   width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
 }
 
 footer .nav-list a {
@@ -594,6 +613,8 @@ footer span {
   font-size: 1.5rem;
   font-weight: 500;
   color: rgba(224, 255, 255, 0.598) !important;
+  max-width: 1300px;
+  margin: 0 auto;
 }
 
 @media screen and (min-width: 900px) {
