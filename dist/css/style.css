@@ -92,7 +92,6 @@ header nav.scrolled {
 header nav .container {
   display: flex;
   align-items: center;
-  justify-content: center;
   justify-content: space-between;
   height: 50px;
   position: absolute;
@@ -101,9 +100,9 @@ header nav .container {
   padding: 0 3rem;
 }
 
-header nav .container .logo {
+header nav .container img {
   width: 100%;
-  max-width: 180px;
+  margin: 0 -10rem;
 }
 
 header nav .cta__btn {
@@ -374,6 +373,7 @@ main .specials .more__specials__supports {
   align-items: center;
   width: 100%;
   max-width: 300px;
+  max-width: 100%;
 }
 
 main .specials .more__specials__supports a {
@@ -617,9 +617,12 @@ footer span {
   margin: 0 auto;
 }
 
-@media screen and (min-width: 900px) {
+@media (min-width: 900px) {
   header nav .container {
     justify-content: center;
+  }
+  header nav .container img {
+    width: 35%;
   }
   header .cta__btn-btn1, header nav .cta__btn-btn2 {
     display: block !important;

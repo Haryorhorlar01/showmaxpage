@@ -24,18 +24,17 @@ header {
         }
 
         .container {
-            @include flexSpace(center);
-            justify-content: space-between;
+            @include flexSpace(space-between);
             height: 50px;
             position: absolute;
             top: 10%;
             right: 1%;
             padding: 0 3rem;
             
-
-            .logo {
+            
+            img {
                 width: 100%;
-                max-width: 180px;
+                margin: 0 -10rem;
             }
         }
 
@@ -278,7 +277,7 @@ main {
             &__supports {
                 @include flexCenter;
                 width: 100%;
-                max-width: 300px;
+                max-width: 300px;max-width: 100%;
 
                 a {
                     background-color: #17171a;
@@ -512,13 +511,17 @@ footer {
 
 
 
-@media screen and (min-width: 900px) {
+@media (min-width: 900px) {
     header {
 
         nav {
 
             .container {
                 justify-content: center;
+                
+                img {
+                    width: 35%;
+                }
             }
         }
 

@@ -16,6 +16,7 @@ header {
             
             img {
                 margin-top: 2.5rem;
+                width: 400px;
             }
         }
 
@@ -93,7 +94,7 @@ main {
                     padding: 0 2rem;
                     width: 371px;
                     font-size: 1.4rem;
-                    @include font-weight(bold);
+                    @include font-weight(normal);
                     text-align: center;
                     min-height: 50px;
                     @include flexSpace(space-between);
@@ -107,14 +108,19 @@ main {
                 & > div.active {
                     background-color: rgb(220, 224, 227);
                     width: 390px;
+                    @include font-weight(bold);
                 }
             }
 
             .tab-body {
                 padding: 20px;
 
-                & > .signin {
+                & > div.active {
                     display: none;
+                }
+
+                & > .div {
+                    display: block;
                 }
 
                 .signup {
@@ -194,7 +200,6 @@ main {
                     @extend .signup;
 
                     .form-input:nth-last-of-type(2), div {
-                        text-align: center;
 
                         .btn {
                             margin-bottom: 2rem;
@@ -224,6 +229,9 @@ main {
 
 
 footer {
+    body {
+        min-width: 55vh;
+    }
 
     @include flexSpace(space-between);
     width: 95%;
@@ -236,3 +244,68 @@ footer {
         font-size: 1.4rem;
     }
 }
+
+
+
+@media (max-width: 360px) {
+
+    footer {
+        -top: 40%;
+    }
+}
+
+
+@media (max-width: 768px) {
+
+    // body {
+    //     min-height: 145vh;
+    // }
+
+ 
+    main .wrapper {
+        flex-direction: column !important;
+        width: 95%;
+        margin-top: 0;
+        margin: auto;
+    }
+
+    .wrapper__header {
+        width: 100% !important;
+
+        &____h1 {
+            line-height: 1.5 !important;
+        }
+    }
+
+
+    .wrapper__content__checklist li {
+        width: 300px;
+        font-size: 1.4rem !important;
+        
+    }    .wrapper__content__checklist li {
+        width: 300px;
+        font-size: 1.4rem !important;
+        
+    }
+        
+}
+
+.tab-form {
+        width: 100% !important;
+
+    }
+
+    .tab-form .tab-header > div {
+        font-size: 1.1rem !important;
+    }
+
+    // footer {
+    //     flex-direction: column;
+    //     gap: 3rem;
+    //     bottom: -40%;
+    //     padding-bottom: -20%;
+    // }
+
+
+
+

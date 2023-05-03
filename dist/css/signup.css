@@ -83,6 +83,7 @@ header nav .container {
 
 header nav .container img {
   margin-top: 2.5rem;
+  width: 400px;
 }
 
 body {
@@ -151,7 +152,7 @@ main .wrapper .tab-form .tab-header > div {
   padding: 0 2rem;
   width: 371px;
   font-size: 1.4rem;
-  font-weight: 700;
+  font-weight: 400;
   text-align: center;
   min-height: 50px;
   display: flex;
@@ -162,14 +163,19 @@ main .wrapper .tab-form .tab-header > div {
 main .wrapper .tab-form .tab-header > div.active {
   background-color: #dce0e3;
   width: 390px;
+  font-weight: 700;
 }
 
 main .wrapper .tab-form .tab-body {
   padding: 20px;
 }
 
-main .wrapper .tab-form .tab-body > .signin {
+main .wrapper .tab-form .tab-body > div.active {
   display: none;
+}
+
+main .wrapper .tab-form .tab-body > .div {
+  display: block;
 }
 
 main .wrapper .tab-form .tab-body .signup .form-input h2, main .wrapper .tab-form .tab-body .signin .form-input h2 {
@@ -250,10 +256,6 @@ main .wrapper .tab-form .tab-body .signup small a, main .wrapper .tab-form .tab-
   color: #0069b1;
 }
 
-main .wrapper .tab-form .tab-body .signin .form-input:nth-last-of-type(2), main .wrapper .tab-form .tab-body .signin div {
-  text-align: center;
-}
-
 main .wrapper .tab-form .tab-body .signin .form-input:nth-last-of-type(2) .btn, main .wrapper .tab-form .tab-body .signin div .btn {
   margin-bottom: 2rem;
 }
@@ -287,8 +289,49 @@ footer {
   transform: translate(2%);
 }
 
+footer body {
+  min-width: 55vh;
+}
+
 footer small {
   color: #fff;
   font-size: 1.4rem;
+}
+
+@media (max-width: 360px) {
+  footer {
+    -top: 40%;
+  }
+}
+
+@media (max-width: 768px) {
+  main .wrapper {
+    flex-direction: column !important;
+    width: 95%;
+    margin-top: 0;
+    margin: auto;
+  }
+  .wrapper__header {
+    width: 100% !important;
+  }
+  .wrapper__header____h1 {
+    line-height: 1.5 !important;
+  }
+  .wrapper__content__checklist li {
+    width: 300px;
+    font-size: 1.4rem !important;
+  }
+  .wrapper__content__checklist li {
+    width: 300px;
+    font-size: 1.4rem !important;
+  }
+}
+
+.tab-form {
+  width: 100% !important;
+}
+
+.tab-form .tab-header > div {
+  font-size: 1.1rem !important;
 }
 /*# sourceMappingURL=signup.css.map */
